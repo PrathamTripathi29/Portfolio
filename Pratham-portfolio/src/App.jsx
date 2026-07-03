@@ -1,23 +1,24 @@
-import React from 'react';
-import Header from './componenets/Header';
-import Footer from './componenets/Footer';
-import { Outlet } from "react-router-dom";
-import './App.css'; // Import the layout styles
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import Projects from "./pages/Projects.jsx";
+import Algorithms from "./pages/Algorithms.jsx";
+import About from "./pages/About.jsx";
 
 export default function App() {
   return (
-    <div className="app-wrapper">
+    <>
       <Header />
-      
-      {/* 
-        Wrapping Outlet in a main tag gives it structural meaning 
-        and allows us to target it with Flexbox to stretch it.
-      */}
-      <main className="main-content">
-        <Outlet />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/algorithms" element={<Algorithms />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
-      
       <Footer />
-    </div>
+    </>
   );
 }

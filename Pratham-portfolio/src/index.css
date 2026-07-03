@@ -1,3 +1,191 @@
+/* =========================================================
+   Design tokens
+   ========================================================= */
 :root {
-    --home-background: #F4F1BB;
+  /* Core palette (from brief) */
+  --bg: #e6ebe0;
+  --header-footer: #5ca4a9;
+  --coral: #ed6a5a;
+  --pale-yellow: #f4f1bb;
+  --sage-teal: #9bc1bc;
+
+  /* Derived tones for contrast + surfaces */
+  --ink: #22322c;
+  --ink-soft: #4b5c53;
+  --surface: #f6f8f3;
+  --surface-border: #d3dccb;
+  --header-footer-deep: #3f8489;
+  --coral-deep: #d2503f;
+  --shadow: 0 10px 30px rgba(34, 50, 44, 0.08);
+
+  /* Type */
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  --container: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+main {
+  flex: 1;
+}
+
+/* Reusable eyebrow / scoreboard-style mono label — the site's signature
+   motif: numbers & meta info are always rendered like a live scoreboard. */
+.mono-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--header-footer-deep);
+  background: rgba(92, 164, 169, 0.12);
+  border: 1px solid rgba(92, 164, 169, 0.35);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.mono-tag .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  flex-shrink: 0;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-top: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--coral);
+  color: #fff9f2;
+}
+
+.btn-primary:hover {
+  background: var(--coral-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(237, 106, 90, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 64px 0;
+  }
 }

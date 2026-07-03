@@ -1,0 +1,20 @@
+.projects-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.projects-page code {
+  font-family: var(--font-mono);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 0.85em;
+}
+
+@media (max-width: 980px) {
+  .projects-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "leetcode": {
+        "rating": 0,
+        "globalRank": "",
+        "totalSolved": 0,
+        "byDifficulty": [],
+        "ratingHistory": []
+    },
+    "codeforces": {
+        "rating": 0,
+        "maxRating": 0,
+        "rank": "",
+        "totalSolved": 0,
+        "ratingHistory": []
+    }
+}

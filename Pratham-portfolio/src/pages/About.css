@@ -1,0 +1,96 @@
+.about-page__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-page__block-title {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--header-footer-deep);
+  margin-bottom: 20px;
+}
+
+.about-page__edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.edu-card {
+  padding: 26px;
+}
+
+.edu-card__period {
+  margin-bottom: 14px;
+}
+
+.edu-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.edu-card__school {
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.edu-card__detail {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--header-footer-deep);
+}
+
+.about-page__bio-card {
+  padding: 26px;
+  border-left: 3px solid var(--coral);
+}
+
+.about-page__bio-card h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.interest-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interest-chip {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 10px 16px;
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.interest-chip:nth-child(3n+1):hover {
+  background: var(--pale-yellow);
+  border-color: var(--pale-yellow);
+}
+
+.interest-chip:nth-child(3n+2):hover {
+  background: var(--sage-teal);
+  border-color: var(--sage-teal);
+  color: #fff;
+}
+
+.interest-chip:nth-child(3n+3):hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff9f2;
+}
+
+@media (max-width: 900px) {
+  .about-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
